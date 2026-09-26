@@ -5,7 +5,7 @@ type: software
 authors:
   - name: "helpcode.ai GmbH"
 repository-code: "https://github.com/HelpCode-ai/erp-mcp-server"
-url: "https://anythingmcp.com/marketplace/category/erp"
+url: "https://anythingmcp.com/guides/erp-to-mcp"
 license: AGPL-3.0-only
 references:
   - type: software
