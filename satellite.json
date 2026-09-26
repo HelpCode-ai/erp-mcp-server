@@ -1,0 +1,158 @@
+{
+  "$comment": "Read by scripts/install.sh, scripts/smoke.mjs and the sync workflow. Generated; edit satellites.config.json in HelpCode-ai/anythingmcp instead.",
+  "repo": "erp-mcp-server",
+  "owner": "HelpCode-ai",
+  "mainRepo": "HelpCode-ai/anythingmcp",
+  "adapters": [
+    {
+      "slug": "sap-business-one",
+      "region": "de",
+      "requiredEnvVars": [
+        "SAP_B1_HOST",
+        "SAP_B1_PORT",
+        "SAP_B1_COMPANY_DB",
+        "SAP_B1_USERNAME",
+        "SAP_B1_PASSWORD"
+      ]
+    },
+    {
+      "slug": "sap-s4hana-cloud",
+      "region": "intl",
+      "requiredEnvVars": [
+        "S4_BASE_URL",
+        "S4_TOKEN_URL",
+        "S4_CLIENT_ID",
+        "S4_CLIENT_SECRET"
+      ]
+    },
+    {
+      "slug": "odoo",
+      "region": "intl",
+      "requiredEnvVars": [
+        "ODOO_URL",
+        "ODOO_DB",
+        "ODOO_API_KEY"
+      ]
+    },
+    {
+      "slug": "dynamics-nav",
+      "region": "de",
+      "requiredEnvVars": [
+        "NAV_BASE_URL",
+        "NAV_COMPANY",
+        "NAV_USERNAME",
+        "NAV_PASSWORD"
+      ]
+    },
+    {
+      "slug": "erpnext",
+      "region": "intl",
+      "requiredEnvVars": [
+        "ERPNEXT_URL",
+        "ERPNEXT_API_KEY",
+        "ERPNEXT_API_SECRET"
+      ]
+    },
+    {
+      "slug": "dolibarr",
+      "region": "fr",
+      "requiredEnvVars": [
+        "DOLIBARR_URL",
+        "DOLIBARR_API_KEY"
+      ]
+    },
+    {
+      "slug": "jtl-wawi",
+      "region": "de",
+      "requiredEnvVars": [
+        "JTL_WAWI_URL",
+        "JTL_WAWI_API_KEY",
+        "JTL_WAWI_APP_ID"
+      ]
+    },
+    {
+      "slug": "xentral",
+      "region": "de",
+      "requiredEnvVars": [
+        "XENTRAL_URL",
+        "XENTRAL_USER",
+        "XENTRAL_PASSWORD"
+      ]
+    },
+    {
+      "slug": "weclapp",
+      "region": "de",
+      "requiredEnvVars": [
+        "WECLAPP_TENANT",
+        "WECLAPP_API_TOKEN"
+      ]
+    },
+    {
+      "slug": "sage-100",
+      "region": "de",
+      "requiredEnvVars": [
+        "SAGE100_URL",
+        "SAGE100_COMPANY",
+        "SAGE100_USERNAME",
+        "SAGE100_PASSWORD"
+      ]
+    },
+    {
+      "slug": "haufe-x360",
+      "region": "de",
+      "requiredEnvVars": [
+        "X360_URL",
+        "X360_USERNAME",
+        "X360_PASSWORD"
+      ]
+    },
+    {
+      "slug": "scopevisio",
+      "region": "de",
+      "requiredEnvVars": [
+        "SCOPEVISIO_BEARER_TOKEN"
+      ]
+    },
+    {
+      "slug": "afas-profit",
+      "region": "nl",
+      "requiredEnvVars": [
+        "AFAS_ENVIRONMENT",
+        "AFAS_TOKEN"
+      ]
+    },
+    {
+      "slug": "zucchetti",
+      "region": "it",
+      "requiredEnvVars": [
+        "ZUCCHETTI_URL",
+        "ZUCCHETTI_USERNAME",
+        "ZUCCHETTI_PASSWORD"
+      ]
+    },
+    {
+      "slug": "teamsystem",
+      "region": "it",
+      "requiredEnvVars": [
+        "TEAMSYSTEM_CLIENT_ID",
+        "TEAMSYSTEM_CLIENT_SECRET",
+        "TEAMSYSTEM_TENANT_ID"
+      ]
+    },
+    {
+      "slug": "axonaut",
+      "region": "fr",
+      "requiredEnvVars": [
+        "AXONAUT_API_KEY"
+      ]
+    }
+  ],
+  "setup": {
+    "type": "adapter"
+  },
+  "smokeCall": {
+    "tool": "b1_list_business_partners",
+    "args": {},
+    "mayFailWithoutCredentials": true
+  }
+}

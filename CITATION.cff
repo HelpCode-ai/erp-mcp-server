@@ -1,0 +1,15 @@
+cff-version: 1.2.0
+title: "erp-mcp-server: ERP MCP server: connect 16 ERPs (SAP, Odoo, JTL-Wawi, Xentral, weclapp, ERPNext…) to Claude & ChatGPT. Self-hosted or cloud."
+message: "If you use this software, please cite AnythingMCP, which it is built on."
+type: software
+authors:
+  - name: "helpcode.ai GmbH"
+repository-code: "https://github.com/HelpCode-ai/erp-mcp-server"
+url: "https://anythingmcp.com/marketplace/category/erp"
+license: AGPL-3.0-only
+references:
+  - type: software
+    title: "AnythingMCP"
+    authors:
+      - name: "helpcode.ai GmbH"
+    repository-code: "https://github.com/HelpCode-ai/anythingmcp"
