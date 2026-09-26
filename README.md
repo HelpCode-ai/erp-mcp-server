@@ -13,14 +13,14 @@ Maintained by [helpcode.ai](https://helpcode.ai), the team that builds and maint
 
 | System | Region | Tools | Auth | Verified live | Cloud | Dedicated repo |
 |---|---|---|---|---|---|---|
-| SAP Business One | DE | 12 | Login session | not yet | [install](https://cloud.anythingmcp.com/connectors/store?install=sap-business-one) | – |
+| SAP Business One | DE | 12 | Login session | not yet | [install](https://cloud.anythingmcp.com/connectors/store?install=sap-business-one) | [sap-business-one-mcp-server](https://github.com/HelpCode-ai/sap-business-one-mcp-server) |
 | SAP S/4HANA Cloud | Global | 15 | OAuth 2.0 | not yet | [install](https://cloud.anythingmcp.com/connectors/store?install=sap-s4hana-cloud) | – |
 | Odoo | Global | 11 | API token | yes, 2026-09-26 | [install](https://cloud.anythingmcp.com/connectors/store?install=odoo) | [odoo-mcp-server](https://github.com/keysersoft/odoo-mcp-server) |
 | Microsoft Dynamics NAV | DE | 6 | User + password | not yet | [install](https://cloud.anythingmcp.com/connectors/store?install=dynamics-nav) | – |
 | ERPNext | Global | 11 | API key | not yet | [install](https://cloud.anythingmcp.com/connectors/store?install=erpnext) | – |
 | Dolibarr | FR | 10 | API key | not yet | [install](https://cloud.anythingmcp.com/connectors/store?install=dolibarr) | – |
 | JTL-Wawi † | DE | 9 | API token | no † | [install](https://cloud.anythingmcp.com/connectors/store?install=jtl-wawi) | – |
-| Xentral ERP | DE | 7 | User + password | not yet | [install](https://cloud.anythingmcp.com/connectors/store?install=xentral) | – |
+| Xentral ERP | DE | 7 | User + password | not yet | [install](https://cloud.anythingmcp.com/connectors/store?install=xentral) | [xentral-mcp-server](https://github.com/kochfreiburg/xentral-mcp-server) |
 | weclapp Cloud ERP | DE | 11 | API key | yes, 2026-09-26 | [install](https://cloud.anythingmcp.com/connectors/store?install=weclapp) | [weclapp-mcp-server](https://github.com/kochfreiburg/weclapp-mcp-server) |
 | Sage 100 (DE) † | DE | 6 | User + password | no † | [install](https://cloud.anythingmcp.com/connectors/store?install=sage-100) | – |
 | Haufe X360 † | DE | 7 | Login session | no † | [install](https://cloud.anythingmcp.com/connectors/store?install=haufe-x360) | – |
@@ -301,6 +301,7 @@ Self-hosted, the credentials and the audit log stay on your server; only the fie
 
 ## Related
 
+- [sap-mcp-server](https://github.com/HelpCode-ai/sap-mcp-server): SAP MCP server: connect SAP Business One, S/4HANA Cloud and Concur to Claude & ChatGPT. Orders, partners, invoices as AI tools.
 - [ecommerce-mcp-server](https://github.com/HelpCode-ai/ecommerce-mcp-server): E-commerce MCP server: connect Amazon, eBay, WooCommerce, Shopware, Kaufland, OTTO and 7 more to Claude & ChatGPT.
 - [soap-to-mcp](https://github.com/HelpCode-ai/soap-to-mcp): Turn any SOAP/WSDL web service into MCP tools for Claude & ChatGPT. Legacy SOAP APIs as AI tools, no code, self-hosted.
 - [sql-to-mcp](https://github.com/HelpCode-ai/sql-to-mcp): SQL to MCP: connect PostgreSQL, MySQL, SQL Server, Oracle or MongoDB to Claude & ChatGPT. Read-only, audited, no code.
