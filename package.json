@@ -2,7 +2,7 @@
   "name": "erp-mcp-server",
   "private": true,
   "type": "module",
-  "description": "ERP MCP server: connect 16 ERPs (SAP, Odoo, JTL-Wawi, Xentral, weclapp, ERPNext…) to Claude & ChatGPT. Self-hosted or cloud.",
+  "description": "ERP MCP server: connect 17 ERPs (SAP, Odoo, JTL-Wawi, Xentral, weclapp, ERPNext…) to Claude & ChatGPT. Self-hosted or cloud.",
   "scripts": {
     "smoke": "node scripts/smoke.mjs",
     "render-tools": "node scripts/render-tools.mjs",
