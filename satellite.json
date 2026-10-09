@@ -93,7 +93,8 @@
       "requiredEnvVars": [
         "JTL_WAWI_URL",
         "JTL_WAWI_API_KEY",
-        "JTL_WAWI_APP_ID"
+        "JTL_WAWI_APP_ID",
+        "JTL_WAWI_APP_VERSION"
       ]
     },
     {
@@ -136,7 +137,10 @@
       "slug": "scopevisio",
       "region": "de",
       "requiredEnvVars": [
-        "SCOPEVISIO_BEARER_TOKEN"
+        "SCOPEVISIO_CUSTOMER",
+        "SCOPEVISIO_USERNAME",
+        "SCOPEVISIO_PASSWORD",
+        "SCOPEVISIO_ORGANISATION"
       ]
     },
     {

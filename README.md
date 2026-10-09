@@ -2,10 +2,10 @@
 
 **Connect 17 ERPs to Claude, ChatGPT and Copilot through one MCP server.** Powered by [AnythingMCP](https://github.com/HelpCode-ai/anythingmcp).
 
-ERP MCP Server connects 17 ERP systems to Claude, ChatGPT, Copilot and Cursor through one MCP endpoint: 165 tools in total. Pick the systems you run, add their credentials, and each becomes a set of MCP tools. It runs on AnythingMCP Cloud or self-hosted with Docker, with encrypted credentials and an audit log.
+ERP MCP Server connects 17 ERP systems to Claude, ChatGPT, Copilot and Cursor through one MCP endpoint: 184 tools in total. Pick the systems you run, add their credentials, and each becomes a set of MCP tools. It runs on AnythingMCP Cloud or self-hosted with Docker, with encrypted credentials and an audit log.
 
 **Last verified:** 2026-09-27 against the systems marked verified in the table (each one's own verification is linked from its row).  
-**Adapter synced:** <!-- synced -->2026-09-27
+**Adapter synced:** <!-- synced -->2026-10-09
 
 Maintained by [helpcode.ai](https://helpcode.ai), the team that builds and maintains [AnythingMCP](https://github.com/HelpCode-ai/anythingmcp).
 
@@ -13,7 +13,7 @@ Maintained by [helpcode.ai](https://helpcode.ai), the team that builds and maint
 
 | System | Region | Tools | Auth | Verified live | Cloud | Dedicated repo |
 |---|---|---|---|---|---|---|
-| SAP Business One | DE | 12 | Login session | not yet | [install](https://cloud.anythingmcp.com/connectors/store?install=sap-business-one) | [sap-business-one-mcp-server](https://github.com/HelpCode-ai/sap-business-one-mcp-server) |
+| SAP Business One | DE | 24 | Login session | yes, 2026-10-09 | [install](https://cloud.anythingmcp.com/connectors/store?install=sap-business-one) | [sap-business-one-mcp-server](https://github.com/HelpCode-ai/sap-business-one-mcp-server) |
 | SAP S/4HANA Cloud | Global | 20 | OAuth 2.0 | not yet | [install](https://cloud.anythingmcp.com/connectors/store?install=sap-s4hana-cloud) | – |
 | SAP S/4HANA (OData) | Global | 12 | User + password | not yet | [install](https://cloud.anythingmcp.com/connectors/store?install=sap-s4hana-odata) | – |
 | SAP S/4HANA (HANA SQL) | Global | 10 | DB user | yes, 2026-09-27 | [install](https://cloud.anythingmcp.com/connectors/store?install=sap-s4hana-hana) | [sap-hana-mcp-server](https://github.com/HelpCode-ai/sap-hana-mcp-server) |
@@ -21,16 +21,16 @@ Maintained by [helpcode.ai](https://helpcode.ai), the team that builds and maint
 | Microsoft Dynamics NAV | DE | 6 | User + password | not yet | [install](https://cloud.anythingmcp.com/connectors/store?install=dynamics-nav) | – |
 | ERPNext | Global | 11 | API key | not yet | [install](https://cloud.anythingmcp.com/connectors/store?install=erpnext) | – |
 | Dolibarr | FR | 10 | API key | not yet | [install](https://cloud.anythingmcp.com/connectors/store?install=dolibarr) | – |
-| JTL-Wawi † | DE | 9 | API token | no † | [install](https://cloud.anythingmcp.com/connectors/store?install=jtl-wawi) | – |
+| JTL-Wawi | DE | 10 | API key | not yet | [install](https://cloud.anythingmcp.com/connectors/store?install=jtl-wawi) | – |
 | Xentral ERP | DE | 7 | User + password | not yet | [install](https://cloud.anythingmcp.com/connectors/store?install=xentral) | [xentral-mcp-server](https://github.com/kochfreiburg/xentral-mcp-server) |
 | weclapp Cloud ERP | DE | 11 | API key | yes, 2026-09-26 | [install](https://cloud.anythingmcp.com/connectors/store?install=weclapp) | [weclapp-mcp-server](https://github.com/kochfreiburg/weclapp-mcp-server) |
 | Sage 100 (DE) † | DE | 6 | User + password | no † | [install](https://cloud.anythingmcp.com/connectors/store?install=sage-100) | – |
 | Haufe X360 † | DE | 7 | Login session | no † | [install](https://cloud.anythingmcp.com/connectors/store?install=haufe-x360) | – |
-| ScopeVisio Cloud ERP | DE | 6 | API token | not yet | [install](https://cloud.anythingmcp.com/connectors/store?install=scopevisio) | – |
-| AFAS Profit † | NL | 6 | API key | no † | [install](https://cloud.anythingmcp.com/connectors/store?install=afas-profit) | – |
+| Scopevisio Cloud ERP | DE | 12 | Login session | not yet | [install](https://cloud.anythingmcp.com/connectors/store?install=scopevisio) | – |
+| AFAS Profit | NL | 6 | API key | not yet | [install](https://cloud.anythingmcp.com/connectors/store?install=afas-profit) | – |
 | Zucchetti † | IT | 6 | User + password | no † | [install](https://cloud.anythingmcp.com/connectors/store?install=zucchetti) | – |
 | TeamSystem † | IT | 6 | OAuth 2.0 | no † | [install](https://cloud.anythingmcp.com/connectors/store?install=teamsystem) | – |
-| Axonaut † | FR | 9 | API key | no † | [install](https://cloud.anythingmcp.com/connectors/store?install=axonaut) | – |
+| Axonaut | FR | 9 | API key | not yet | [install](https://cloud.anythingmcp.com/connectors/store?install=axonaut) | – |
 
 "Verified live" means someone ran the connector against a real system; its own repository says how and when. "Not yet" means it follows the vendor's API documentation and has not been confirmed there; reports are welcome.
 
@@ -65,21 +65,33 @@ git clone https://github.com/HelpCode-ai/erp-mcp-server.git && cd erp-mcp-server
 ## Tools
 
 <!-- tools:start (generated from adapter/*.json, do not edit) -->
-#### SAP Business One (12)
+#### SAP Business One (24)
 
 | Tool | What it does | Access |
 |---|---|---|
-| `b1_list_business_partners` | List business partners (customers, suppliers, leads). | read |
-| `b1_get_business_partner` | Get one business partner by CardCode. | read |
-| `b1_list_items` | List inventory items (articles). | read |
-| `b1_get_item` | Get one item by ItemCode. | read |
-| `b1_list_orders` | List sales orders. | read |
-| `b1_get_order` | Get one sales order by DocEntry (integer primary key). | read |
+| `b1_list_business_partners` | List business partners (customers, suppliers, leads) with their code, name, type and balance. | read |
+| `b1_get_business_partner` | Read one business partner by CardCode: addresses, contacts, payment terms and balance. | read |
+| `b1_list_items` | List inventory items with their code, name, prices and stock per warehouse (ItemWarehouseInfoCollection). | read |
+| `b1_get_item` | Read one item by ItemCode: prices, units, groups and stock in each warehouse. | read |
+| `b1_list_orders` | List sales orders with their customer, dates, totals and status (bost_Open / bost_Close). | read |
+| `b1_get_order` | Read one sales order by DocEntry (integer key, not DocNum), with all its lines. | read |
 | `b1_create_order` | Create a new sales order. | write |
-| `b1_list_invoices` | List A/R invoices. | read |
-| `b1_get_invoice` | Get one A/R invoice by DocEntry. | read |
-| `b1_list_quotations` | List sales quotations. | read |
-| `b1_list_delivery_notes` | List delivery notes (outgoing goods movements). | read |
+| `b1_list_invoices` | List A/R invoices (sales invoices to customers). | read |
+| `b1_get_invoice` | Read one A/R invoice by DocEntry (integer key, not DocNum), with lines and taxes. | read |
+| `b1_list_quotations` | List sales quotations with their customer, validity date, totals and status. | read |
+| `b1_list_delivery_notes` | List delivery notes (goods shipped to customers) with their customer, date and lines. | read |
+| `b1_list_credit_notes` | List A/R credit memos (credit notes issued to customers) with their totals and status. | read |
+| `b1_list_purchase_invoices` | List A/P invoices (supplier invoices). | read |
+| `b1_get_purchase_invoice` | Read one A/P invoice in full, with its lines, taxes and withholding tax. | read |
+| `b1_list_purchase_credit_notes` | List A/P credit memos (credit notes received from suppliers). | read |
+| `b1_list_vendor_payments` | List outgoing payments to suppliers, with the invoices each one settles (PaymentInvoices). | read |
+| `b1_list_incoming_payments` | List incoming payments from customers, with the invoices each one settles (PaymentInvoices). | read |
+| `b1_list_journal_entries` | List journal entries with their lines (JournalEntryLines: account, debit, credit). | read |
+| `b1_get_journal_entry` | Read one journal entry by JdtNum (TransId) with all its lines: account, debit and credit. | read |
+| `b1_list_chart_of_accounts` | List G/L accounts of the chart of accounts with their code, name, type and balance. | read |
+| `b1_list_bank_statements` | List imported bank statements with their account, date and balances. | read |
+| `b1_list_external_reconciliations` | List external (bank) reconciliations of G/L or business partner accounts in a date or number range. | read |
+| `b1_get_external_reconciliation` | Read one external (bank) reconciliation: amount, date, type and the journal entry and bank statement lines it matched. | read |
 | `b1_get_company_info` | Sanity check: returns company metadata (admin info). | read |
 
 #### SAP S/4HANA Cloud (20)
@@ -151,7 +163,7 @@ git clone https://github.com/HelpCode-ai/erp-mcp-server.git && cd erp-mcp-server
 | `odoo_list_sale_orders` | List sales orders with their customer, date, state and total. | read |
 | `odoo_list_invoices` | List customer invoices and vendor bills with their partner, date, due date, state and residual amount — the answer to 'what is still unpaid'. | read |
 | `odoo_list_products` | List products with their internal reference, sale price, cost, product type and unit of measure. | read |
-| `odoo_create` | Create a record in any Odoo model. | write |
+| `odoo_create` | Create a record in any Odoo model and return its id (as a one-element list). | write |
 | `odoo_write` | Update existing records in any Odoo model. | write |
 | `odoo_call_method` | Call an arbitrary public method on an Odoo model — the escape hatch for workflow actions such as action_confirm on a sale order or action_post on an invoice. | write |
 
@@ -159,10 +171,10 @@ git clone https://github.com/HelpCode-ai/erp-mcp-server.git && cd erp-mcp-server
 
 | Tool | What it does | Access |
 |---|---|---|
-| `dynamics_nav_list_services` | List the published web services available on this company — the entity set names every other tool needs. | read |
+| `dynamics_nav_list_services` | List the published web services (the OData service document at the service root) — the entity set names every other tool needs. | read |
 | `dynamics_nav_query` | Query any published entity set with OData v4. | read |
 | `dynamics_nav_get_by_key` | Read one record by its OData key. | read |
-| `dynamics_nav_get_metadata` | Read the OData $metadata document: every published entity type, its properties and their data types. | read |
+| `dynamics_nav_get_metadata` | Read the OData $metadata document (EDMX, XML) at the service root: every published entity type, its properties and their data types. | read |
 | `dynamics_nav_create_record` | Create a record in a published entity set. | write |
 | `dynamics_nav_update_record` | Update one record by key. | write |
 
@@ -174,11 +186,11 @@ git clone https://github.com/HelpCode-ai/erp-mcp-server.git && cd erp-mcp-server
 | `erpnext_list_documents` | List documents of any DocType with Frappe filters. | read |
 | `erpnext_get_document` | Read one document of any DocType in full by its name (ERPNext's primary key), including its child tables. | read |
 | `erpnext_count_documents` | Count the documents of a DocType matching a filter, without transferring them. | read |
-| `erpnext_get_doctype_meta` | Describe a DocType: every field with its type, label, options and whether it is required. | read |
+| `erpnext_get_doctype_meta` | Describe a DocType: every field (standard and custom) with its type, label, options and whether it is required, under docs[0].fields. | read |
 | `erpnext_list_customers` | List customers with their name, group, territory, currency and default payment terms. | read |
 | `erpnext_list_sales_orders` | List sales orders with their customer, date, delivery date, status and grand total. | read |
 | `erpnext_list_sales_invoices` | List sales invoices with their customer, posting date, due date, status and outstanding amount — the answer to 'what is still unpaid'. | read |
-| `erpnext_list_items` | List items from the catalogue with their code, name, group, stock UOM and default rate. | read |
+| `erpnext_list_items` | List items from the catalogue with their code, name, group, stock UOM, stock flag and disabled flag. | read |
 | `erpnext_list_stock_balance` | Read per-warehouse stock: actual, reserved and projected quantity per item. | read |
 | `erpnext_create_document` | Create a document of any DocType. | write |
 
@@ -197,19 +209,20 @@ git clone https://github.com/HelpCode-ai/erp-mcp-server.git && cd erp-mcp-server
 | `dolibarr_list_products` | List products and services with their reference, label, sale and cost price, VAT rate and stock quantity. | read |
 | `dolibarr_get_product_stock` | Read the per-warehouse stock of one product — the answer an availability question actually needs, rather than the cached total on the product record. | read |
 
-#### JTL-Wawi (9)
+#### JTL-Wawi (10)
 
 | Tool | What it does | Access |
 |---|---|---|
 | `jtl_wawi_list_warehouses` | List the warehouses (Lager) configured in JTL-Wawi with their id, name and type. | read |
 | `jtl_wawi_list_items` | List articles from the item master with their SKU, name, prices, EAN and manufacturer. | read |
 | `jtl_wawi_get_item` | Read one article in full: its SKU, descriptions, dimensions, prices, categories and supplier links. | read |
-| `jtl_wawi_get_item_stock` | Read the per-warehouse stock of one article: quantity on hand, reserved, and available. | read |
+| `jtl_wawi_get_item_stock` | Read the stock of one article per warehouse and storage location: total quantity and the quantity locked for shipment. | read |
 | `jtl_wawi_list_customers` | List customers with their customer number, company, contact name, address and customer group. | read |
 | `jtl_wawi_get_customer` | Read one customer in full: billing and delivery addresses, payment and shipping defaults, and the customer group they belong to. | read |
-| `jtl_wawi_list_sales_orders` | List sales orders with their order number, customer, date, payment and shipping status and total. | read |
-| `jtl_wawi_get_sales_order` | Read one sales order in full: its line items with SKU, quantity and price, the addresses, and the payment and shipping state. | read |
-| `jtl_wawi_list_shipments` | List shipments with their tracking number, carrier, date and the sales order they belong to — the answer to 'has it gone out yet'. | read |
+| `jtl_wawi_list_sales_orders` | List sales orders with their order number, customer, date, addresses, payment and shipping details. | read |
+| `jtl_wawi_get_sales_order` | Read the header of one sales order: addresses, customer, order date, payment and shipping details, cancellation state. | read |
+| `jtl_wawi_list_sales_order_line_items` | Read the line items of one sales order: SKU, name, quantity ordered, delivered and returned, net and gross price, discount and tax rate. | read |
+| `jtl_wawi_list_shipments` | List delivery notes (Lieferscheine) with their number, date and packages; each package carries its tracking id, tracking URL and shipped date. | read |
 
 #### Xentral ERP (7)
 
@@ -262,16 +275,22 @@ git clone https://github.com/HelpCode-ai/erp-mcp-server.git && cd erp-mcp-server
 | `haufe_x360_list_shipments` | List shipments with their number, customer, status, shipment date and the sales order they fulfil. | read |
 | `haufe_x360_list_vendors` | List vendors with their id, name, status, class and balance, for the purchasing side of the ledger. | read |
 
-#### ScopeVisio Cloud ERP (6)
+#### Scopevisio Cloud ERP (12)
 
 | Tool | What it does | Access |
 |---|---|---|
-| `scopevisio_list_contacts` | List contacts (customers, suppliers, leads) from ScopeVisio. | read |
-| `scopevisio_get_contact` | Get detailed information about a specific contact by ID. | read |
-| `scopevisio_list_outgoing_invoices` | List outgoing invoices (Ausgangsrechnungen) from ScopeVisio. | read |
-| `scopevisio_list_incoming_invoices` | List incoming invoices (Eingangsrechnungen) from ScopeVisio. | read |
-| `scopevisio_list_projects` | List projects from ScopeVisio. | read |
-| `scopevisio_list_tasks` | List tasks from ScopeVisio. | read |
+| `scopevisio_get_account` | Show the signed-in Scopevisio user and customer account. | read |
+| `scopevisio_list_organisations` | List the Scopevisio organisations (companies) of this customer that the user can access, with id and name. | read |
+| `scopevisio_list_contacts` | Search Scopevisio contacts (customers, suppliers, people and companies). | read |
+| `scopevisio_get_contact` | Get one Scopevisio contact by its numeric id, with all default fields or only the fields you name. | read |
+| `scopevisio_list_outgoing_invoices` | Search Scopevisio outgoing invoices (Ausgangsrechnungen). | read |
+| `scopevisio_get_outgoing_invoice` | Get one Scopevisio outgoing invoice by its internal number (interne Nummer). | read |
+| `scopevisio_get_outgoing_invoice_positions` | List the line items (positions) of one Scopevisio outgoing invoice by its internal number. | read |
+| `scopevisio_list_incoming_invoices` | Search Scopevisio incoming invoices (Eingangsrechnungen, Rechnungseingangsbuch). | read |
+| `scopevisio_list_projects` | Search Scopevisio projects. | read |
+| `scopevisio_get_project` | Get one Scopevisio project by its numeric id. | read |
+| `scopevisio_list_tasks` | Search Scopevisio tasks (Aufgaben). | read |
+| `scopevisio_get_task` | Get one Scopevisio task by its numeric id, with topic, status, priority, linked contact and project. | read |
 
 #### AFAS Profit (6)
 
@@ -280,9 +299,9 @@ git clone https://github.com/HelpCode-ai/erp-mcp-server.git && cd erp-mcp-server
 | `afas_profit_list_connectors` | List the GetConnectors and UpdateConnectors published to this app connector. | read |
 | `afas_profit_get_connector_metadata` | Read one GetConnector's field definitions: the field ids, their types and lengths. | read |
 | `afas_profit_get_data` | Read rows from a GetConnector with AFAS's positional three-list filter. | read |
-| `afas_profit_get_debtors` | Read the Profit_Debiteuren GetConnector — customers with their debtor number, name, address and credit data. | read |
-| `afas_profit_get_invoices` | Read the Profit_Facturen GetConnector — invoices with their number, date, debtor and amounts. | read |
-| `afas_profit_get_employees` | Read the Profit_Medewerkers GetConnector — employees with their number, name, department and employment data. | read |
+| `afas_profit_get_debtors` | Read the standard Profit_Debtor GetConnector — customers with debtor number (DebtorId), name, address, e-mail, VAT and CoC number, payment condition and… | read |
+| `afas_profit_get_invoices` | Read the standard Profit_Debtor_Invoices GetConnector — outstanding debtor items: invoice number (InvoiceNr), debtor (DebtorId), voucher date… | read |
+| `afas_profit_get_employees` | Read the standard Profit_Employees GetConnector — employees with their number (EmployeeId), person and employer id, name, contact and address data and… | read |
 
 #### Zucchetti (6)
 
